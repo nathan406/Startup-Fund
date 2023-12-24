@@ -27,18 +27,18 @@ SECRET_KEY = 'django-insecure-gk3-cfc$m4d3b!#&8#fo0d0q-8y-dqhe*n-9(u#wi26w=@z2@n
 # SECURITY WARNING: don't run with debug turned on in production!
 #  turn off debug to test if white noise is working 
 
-<<<<<<< HEAD
+
 ALLOWED_HOSTS = ['*']
 
 # ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
-=======
+
 # xxxxxxxxxxxxxxxx use '*' to allow all hosts xxxxxxxxxxxxxxxxxxxxxxxxx
 DEBUG = 0
 
 #  ---------------this is  a cors thing -----------------
 ALLOWED_HOSTS = ['*']
 
->>>>>>> origin/main
+
 
 
 # Application definition
