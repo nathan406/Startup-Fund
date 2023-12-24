@@ -27,18 +27,9 @@ SECRET_KEY = 'django-insecure-gk3-cfc$m4d3b!#&8#fo0d0q-8y-dqhe*n-9(u#wi26w=@z2@n
 # SECURITY WARNING: don't run with debug turned on in production!
 #  turn off debug to test if white noise is working 
 
-
 ALLOWED_HOSTS = ['*']
 
-# ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
-
-# xxxxxxxxxxxxxxxx use '*' to allow all hosts xxxxxxxxxxxxxxxxxxxxxxxxx
-DEBUG = 0
-
-#  ---------------this is  a cors thing -----------------
-ALLOWED_HOSTS = ['*']
-
-
+# ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -70,7 +61,7 @@ ROOT_URLCONF = 'StartupFund.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'Base/Templates'],
+        'DIRS': [BASE_DIR / 'Templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -89,14 +80,19 @@ WSGI_APPLICATION = 'StartupFund.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# Build paths inside the project like this: BASE_DIR / "subdir".
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-DATABASES['default'] = dj_database_url.config()
+# Use dj_database_url.config() for production, falling back to a local SQLite database for development.
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'])}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Password validation
