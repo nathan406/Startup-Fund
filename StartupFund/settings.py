@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-gk3-cfc$m4d3b!#&8#fo0d0q-8y-dqhe*n-9(u#wi26w=@z2@n
 # SECURITY WARNING: don't run with debug turned on in production!
 #  turn off debug to test if white noise is working 
 
-ALLOWED_HOSTS = ['*']
+DEBUG = "False"
+
+ALLOWED_HOSTS = ["*", ".vercel.app", ".now.sh"]
 
 # ALLOWED_HOSTS = ['.vercel.app']
 
@@ -85,8 +87,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Use dj_database_url.config() for production, falling back to a local SQLite database for development.
 
-# DABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'])}
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': '',
+        # 'USER': '<myuser>',
+        # 'PASSWORD': '<mypass>',
+        # 'HOST': 'localhost',
+        # 'PORT': '5432',
+    }
+}
     # DATABASES = {
     #     'default': {
     #         'ENGINE': 'django.db.backends.sqlite3',
