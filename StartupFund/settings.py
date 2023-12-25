@@ -90,7 +90,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'nathan database',
+        'NAME': '<myname>',
         # 'USER': '<myuser>',
         # 'PASSWORD': '<mypass>',
         # 'HOST': 'localhost',
