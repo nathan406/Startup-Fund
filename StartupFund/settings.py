@@ -84,15 +84,15 @@ WSGI_APPLICATION = 'StartupFund.wsgi.application'
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Use dj_database_url.config() for production, falling back to a local SQLite database for development.
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'])}
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+
+# DABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'])}
+
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.sqlite3',
+    #         'NAME': BASE_DIR / 'db.sqlite3',
+    #     }
+    # }
 
 
 # Password validation
