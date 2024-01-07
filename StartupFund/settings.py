@@ -147,14 +147,14 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# The directory where Django will look for additional static files during development
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'Base/Templates/Base/Templates/static'
-# ]
+# The directory where Django will collect static files during production
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
 
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
 
