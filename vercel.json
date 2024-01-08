@@ -23,5 +23,12 @@
         "src": "/(.*)",
         "dest": "StartFund/wsgi.py"
       }
+    ],
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/" }
     ]
   }
+
+  
+    
+  
